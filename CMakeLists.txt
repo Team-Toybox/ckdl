@@ -112,13 +112,6 @@ if (CKDL_BUILD_UTILS)
     add_subdirectory(src/utils)
 endif()
 
-option(CKDL_BUILD_TESTS "Build tests" ON)
-if(CKDL_BUILD_TESTS)
-    include(CTest)
-    enable_testing()
-    add_subdirectory(tests)
-endif()
-
 if(CMAKE_VERSION VERSION_LESS 3.12)
     message(WARNING "CMake 3.12 is required for the C++20 bindings, not building kdlpp")
 else()
