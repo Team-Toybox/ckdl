@@ -61,7 +61,7 @@ if(BUILD_KDLPP)
     install(TARGETS kdlpp COMPONENT libkdlpp)
     install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/include/kdlpp.h TYPE INCLUDE COMPONENT libkdlpp)
 
-    if(BUILD_TESTS)
+    if(CKDL_BUILD_TESTS)
         add_subdirectory(tests)
     endif()
 
