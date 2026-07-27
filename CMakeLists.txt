@@ -112,8 +112,7 @@ if (CKDL_BUILD_UTILS)
     add_subdirectory(src/utils)
 endif()
 
-set(CKDL_BUILD_TESTS ON CACHE BOOL "Build tests")
-
+option(CKDL_BUILD_TESTS "Build tests" ON)
 if(CKDL_BUILD_TESTS)
     include(CTest)
     enable_testing()
