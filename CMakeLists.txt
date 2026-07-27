@@ -107,11 +107,14 @@ include(GNUInstallDirs)
 install(TARGETS kdl DESTINATION ${CMAKE_INSTALL_LIBDIR} COMPONENT libkdl)
 install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/kdl DESTINATION ${CMAKE_INSTALL_INCLUDEDIR} COMPONENT libkdl)
 
-add_subdirectory(src/utils)
+option(CKDL_BUILD_UTILS "build extra utilities for ckdl" OFF)
+if (CKDL_BUILD_UTILS)
+    add_subdirectory(src/utils)
+endif()
 
-set(BUILD_TESTS ON CACHE BOOL "Build tests")
+set(CKDL_BUILD_TESTS ON CACHE BOOL "Build tests")
 
-if(BUILD_TESTS)
+if(CKDL_BUILD_TESTS)
     include(CTest)
     enable_testing()
     add_subdirectory(tests)
